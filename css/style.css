@@ -1,0 +1,127 @@
+body {
+    color: #b8c8eb;
+    font-family: 'Marcellus SC', serif;
+    background-color: #032121;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+a {
+    font-size: 12px;
+    padding: 10px;
+    color: #b8c8eb;
+    outline: none;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #c1a877;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c1a877;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 50px;
+    border-bottom: 2px solid #c1a877;
+}
+
+h2 {
+    font-size: 42px;
+    border-bottom: 2px solid #c1a877;
+}
+
+h3 {
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+h4 {
+    font-size: 25px;
+    border-bottom: 2px solid #c1a877;
+}
+
+.container-sm {
+    margin-top: 10%;
+    min-height: 650px;
+}
+
+.container-lg {
+    margin-top: 80px;
+    min-height: 800px;
+}
+
+.well {
+    border: 2px double #c1a877;
+    background-color: #221803;
+}
+
+.middle-menu {
+    margin-top: 10%;
+    padding-bottom: 10%;
+}
+
+.form-control {
+    background-color: #dae0ec;
+    font-family: 'Marcellus SC', serif;
+    color: #221803;
+    font-size: 16px;
+    outline: none;
+    border-radius: 3px;
+    text-align: center;
+    border: 2px solid #556281;
+}
+
+.form-control::placeholder {
+    color: #221803;
+}
+
+.form-control:focus {
+    background-color: whitesmoke;
+    border: 2px solid #c1a877;
+}
+
+.btn-success {
+    background-color: #556281;
+    font-family: 'Marcellus SC', serif;
+    color: #b8c8eb;
+    font-size: 16px;
+    outline: none;
+    margin-top: 10px;
+    border: 2px solid #b8c8eb;
+    width: 80px;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    border: 2px solid #c1a877;
+    background-color: #556281;
+    outline: none;
+}
+
+.btn-success:active:focus {
+    background-color: #c1a877;
+    border: 2px solid #556281;
+}
+
+.btn-lg {
+    width: 250px;
+    height: 60px;
+}
+
+.table-striped>tbody>tr:nth-child(2n+1)>td,
+.table-striped>tbody>tr:nth-child(2n+1)>th {
+    background-color: #332a18;
+}
+
+.table-striped tr:first-child {
+    background: #857453;
+}
+
+th {
+    text-align: center;
+}
