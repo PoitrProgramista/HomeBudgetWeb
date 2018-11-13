@@ -6,14 +6,16 @@ class FormInput
     private $type = '';
     private $class = '';
     private $text = '';
+    private $formatStyle = '';
 
-    function __construct($name, $title, $type, $class = '', $text = '')
+    function __construct($name, $title, $type, $class = '', $formatStyle = FormatStyles::STANDARD, $text = '')
     {
         $this->title = $title;
         $this->name = $name;
         $this->type = $type;
         $this->class = $class;
         $this->text = $text;
+        $this->formatStyle = $formatStyle;
     }
 
     function show()
@@ -27,7 +29,7 @@ class FormInput
             $textToShow  = $this->text;
 
         echo '<div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
+                <div class="'.$this->formatStyle.'">
                     <label class="control-label" >'.$this->title.'</label>
                     <input class="'.$this->class.' form-control" name="'.$this->name.'" type="'.$this->type.'" value="'.$textToShow.'">
                 </div>

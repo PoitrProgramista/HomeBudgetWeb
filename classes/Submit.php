@@ -2,17 +2,19 @@
 class Submit
 {
     private $text = '';
+    private $formatStyle = '';
 
-    function __construct($text)
+    function __construct($text, $formatStyle = FormatStyles::STANDARD)
     {
         $this->text = $text;
+        $this->formatStyle = $formatStyle;
     }
 
     function show()
     {
-        echo    '<div class="col-md-2 col-md-offset-5 text-center">
-                    <input type="submit" class="btn btn-success btn-md" value="'.$this->text.'">
-                </div>';
+        echo '<div class="'.$this->formatStyle.'">
+                <input type="submit" class="btn btn-success btn-md" value="'.$this->text.'">
+            </div>';
     }
 }
 

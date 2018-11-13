@@ -10,8 +10,8 @@ class PeriodSubForm
         $this->selector = new Selector('period');
         $this->populateSelector();
 
-        $this->dateBegin = new FormInput('date', 'Data', 'text', 'date');
-        $this->dateEnd = new FormInput('end', 'asda', 'text', 'date', 'dsa');   
+        $this->dateBegin = new FormInput('begin', '', 'text', 'date', '');
+        $this->dateEnd = new FormInput('end', '', 'text', 'date', 'dsa', '');   
     }
 
     function show()
