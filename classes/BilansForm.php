@@ -9,13 +9,15 @@ class BilansForm
     {
         $this->portalBack = $portalBack;
 
-        array_push($this->elements, new PeriodSubForm());
-        array_push($this->elements, new SmallButton('mainMenu', 'Wróć'));
+        $this->elements['periodForm'] = new PeriodSubForm();
+        $this->elements['tablesForm'] = new BilansTableSubForm();
+        $this->elements['pieChart'] = new PieChart();
+        $this->elements['return']  = new SmallButton('mainMenu', 'Wróć');
     }
 
     public function showForm()
     {
-        echo '<div class="col-md-6 col-md-offset-3 text-center">
+        echo '<div class="'.FormatStyles::MIDDLE_TITLE.'">
                     <h2>Przeglądanie bilansu</h2>
             </div>';
 
@@ -26,29 +28,18 @@ class BilansForm
             $input->show();
     }
 
-    private function getPaymentData()
+    public function populateIncomesTable($incomeRows, $incomesSum)
     {
-        $query = "SELECT id,name FROM payment_methods_assigned_to_users WHERE user_id = ".$this->parameterUserID." ORDER BY position ASC";
-
-        return $this->getRadioData($query);
+        $this->elements['tablesForm']->populateIncomesTable($incomeRows, $incomesSum);
     }
 
-    private function getCategoryData()
+    public function populateExpensesTable($expenseRows, $expensesSum)
     {
-        $query = "SELECT id,name FROM expenses_category_assigned_to_users WHERE user_id = ".$this->parameterUserID." ORDER BY position ASC";
-
-        return $this->getRadioData($query);
+        $this->elements['tablesForm']->populateExpensesTable($expenseRows, $expensesSum);
     }
 
-    private function getRadioData($query)
+    public function populatePieChart($expensesArray)
     {
-        $loggedUser = $this->portalBack->getLoggedUser();
-        $userID = $loggedUser->getID();
-
-        $arguments[$this->parameterUserID] = $userID;
-        $queryResult = $this->portalBack->queryDatabase($query, $arguments);
-        unset($arguments);
-
-        return $queryResult->fetchAll();
+        $this->elements['pieChart']->populatePieChart($expensesArray);
     }
 }

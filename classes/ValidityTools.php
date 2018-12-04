@@ -14,4 +14,9 @@ class ValidityTools
 
         return $dateOut && $dateOut->format($format) == $date;
     }
+
+    static function validatePeriod($begin, $end)
+    {
+        return $end >= $begin;
+    }
 }

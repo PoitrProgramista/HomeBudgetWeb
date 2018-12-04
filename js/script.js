@@ -29,11 +29,7 @@ function setDefinedPeriod()
 
 function submitPeriod()
 {
-    lastSelected = $('#period').val();
-
     $('#periodForm').submit();
-
-    $('#period').val(lastSelected);
 }
 
 function onLoad()

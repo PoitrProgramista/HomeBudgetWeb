@@ -51,7 +51,7 @@ class Portal
     function bilans()
     {
         $this->form = new BilansForm($this->portalBack);
-        $this->action = new Bilans($this->portalBack); 
+        $this->action = new Bilans($this->portalBack, $this->form); 
     }
 
     function showForm()

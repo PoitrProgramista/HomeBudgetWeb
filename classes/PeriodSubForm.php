@@ -11,7 +11,7 @@ class PeriodSubForm
         $this->populateSelector();
 
         $this->dateBegin = new FormInput('begin', '', 'text', 'date', '');
-        $this->dateEnd = new FormInput('end', '', 'text', 'date', 'dsa', '');   
+        $this->dateEnd = new FormInput('end', '', 'text', 'date', '');   
     }
 
     function show()
@@ -26,24 +26,21 @@ class PeriodSubForm
         else
             $choice = null;
 
-        if($choice == 'userDefined')
-        {
-            echo '<div id="userDate" class="col-md-4 col-md-offset-8 text-right input-group">
+        echo '  <div id="userDate" class="col-md-4 col-md-offset-8 text-right input-group">
                     <div class="col-md-6 ">';
                         $this->dateBegin->show();
-            echo '  </div>
+        echo '      </div>
                     <div class="col-md-6">';
                         $this->dateEnd->show();
-            echo '  </div>';
+        echo '      </div>';
 
-            if (isset($_SESSION['e_date'])) 
-            {
-                echo '<div class="text-danger text-center">' . $_SESSION['e_date'] . '</div>';
-                unset($_SESSION['e_date']);
-            }
-
-            echo '</div>';
+        if (isset($_SESSION['e_date'])) 
+        {
+            echo '<div class="text-danger text-center">' . $_SESSION['e_date'] . '</div>';
+            unset($_SESSION['e_date']);
         }
+        
+        echo '  </div>';
         echo '</form>';
     }
 

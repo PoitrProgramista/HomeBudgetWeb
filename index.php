@@ -6,7 +6,7 @@ if(!isset($_SESSION['portal']))
     $_SESSION['portal'] = new Portal();
 
 if (!isset($_GET['state']))
-    $_GET['state'] = 'registration';
+    $_GET['state'] = 'login';
 
 if (!isset($_SESSION['UserLogged']))
     $_SESSION['UserLogged'] = false;
