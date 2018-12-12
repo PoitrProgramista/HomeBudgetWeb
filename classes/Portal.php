@@ -54,6 +54,12 @@ class Portal
         $this->action = new Bilans($this->portalBack, $this->form); 
     }
 
+    function settings()
+    {
+        $this->form = new SettingsForm($this->portalBack);
+        $this->action = new Settings($this->portalBack, $this->form); 
+    }
+
     function showForm()
     {
         $this->form->showForm();

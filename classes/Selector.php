@@ -1,18 +1,25 @@
 <?php
 class Selector
-{
+{   
+    private $multiplePick = false;
     private $name = '';
     private $options = array();
 
-    function __construct($name)
+    function __construct($name, $multiplePick = false)
     {
         $this->name = $name;
+        $this->multiplePick = $multiplePick;
     }
 
     function show()
     {
-        echo '<select id="'.$this->name.'" class="form-control" name="'.$this->name.'">';
-        
+        echo '<select id="'.$this->name.'" class="form-control" name="'.$this->name.'"';
+
+        if($this->multiplePick)
+            echo ' multiple>';
+        else
+            echo '>';
+
         foreach ($this->options as $option)
             $option->show();
 

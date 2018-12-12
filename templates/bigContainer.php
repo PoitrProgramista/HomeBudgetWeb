@@ -2,7 +2,7 @@
     if(!isset($_SESSION['portal'])) 
         die();
 
-    if(!empty($_POST))
+    if($_POST)
         $portal->submit();
 ?>
 

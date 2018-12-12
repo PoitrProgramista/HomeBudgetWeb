@@ -1,2 +1,2 @@
 <?php
-return ['host' => 'localhost', 'user' => 'root', 'password' => '', 'database' => 'homebudget'];
+return ['host' => 'localhost', 'user' => 'pwozn_root', 'password' => '', 'database' => 'pwozn_homebudget'];

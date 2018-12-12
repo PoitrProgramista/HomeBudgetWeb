@@ -47,6 +47,9 @@ try
             case 'bilans':
                 $portal->bilans();
                 break;
+            case 'settings':
+                $portal->settings();
+                break;
             case 'logout':
                 $portal->logout();
                 break;

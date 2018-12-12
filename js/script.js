@@ -37,7 +37,7 @@ function onLoad()
     if ($('.date').val() == "")
         getCurrentDate();
 
-    setDefinedPeriod();
+    setDefinedPeriod();     
 }
 
 $('#period').change(submitPeriod);
